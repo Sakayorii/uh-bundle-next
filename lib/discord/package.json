@@ -1,0 +1,55 @@
+{
+  "name": "@tacet-mod/discord",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./actions": {
+      "default": "./src/actions.ts"
+    },
+    "./common": {
+      "default": "./src/common/index.ts"
+    },
+    "./common/flux": {
+      "default": "./src/common/flux.ts"
+    },
+    "./common/utils": {
+      "default": "./src/common/utils.ts"
+    },
+    "./design": {
+      "default": "./src/design.ts"
+    },
+    "./flux": {
+      "default": "./src/flux/index.ts"
+    },
+    "./native": {
+      "default": "./src/native.ts"
+    },
+    "./preinit": {
+      "default": "./src/preinit.ts"
+    },
+    "./start": {
+      "default": "./src/start.ts"
+    },
+    "./modules/main_tabs_v2": {
+      "default": "./src/modules/main_tabs_v2.ts"
+    },
+    "./modules/settings": {
+      "default": "./src/modules/settings/index.ts"
+    },
+    "./modules/settings/renderer": {
+      "default": "./src/modules/settings/renderer.ts"
+    },
+    "./utils/modules/finders": {
+      "default": "./src/utils/modules/finders.ts"
+    },
+    "./utils/modules/metro/subscriptions": {
+      "default": "./src/utils/modules/metro/subscriptions.ts"
+    },
+    "./types": {
+      "types": "./src/types/index.ts"
+    },
+    "./_/modules/settings": {
+      "default": "./src/modules/settings/_internal.ts"
+    }
+  }
+}

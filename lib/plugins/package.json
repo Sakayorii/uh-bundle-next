@@ -1,0 +1,25 @@
+{
+  "name": "@tacet-mod/plugins",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./constants": {
+      "default": "./src/constants.ts"
+    },
+    "./preinit": {
+      "default": "./src/preinit.ts"
+    },
+    "./init": {
+      "default": "./src/init.ts"
+    },
+    "./start": {
+      "default": "./src/start.ts"
+    },
+    "./types": {
+      "types": "./src/types.ts"
+    },
+    "./_": {
+      "default": "./src/_internal/index.ts"
+    }
+  }
+}

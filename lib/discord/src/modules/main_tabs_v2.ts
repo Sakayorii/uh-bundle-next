@@ -1,0 +1,42 @@
+import { lookupModule } from '@tacet-mod/modules/finders'
+import {
+    withDependencies,
+    withProps,
+} from '@tacet-mod/modules/finders/filters'
+import { proxify } from '@tacet-mod/utils/proxy'
+import { ImportTrackerModuleId } from '../common'
+import type { NavigationContainerRef } from '@react-navigation/core'
+
+const { loose, relative } = withDependencies
+
+export interface RootNavigationRef {
+    getRootNavigationRef<
+        T extends object = Record<string, unknown>,
+    >(): NavigationContainerRef<T>
+}
+
+export let RootNavigationRef: RootNavigationRef = proxify(
+    () => {
+        const [module] = lookupModule(
+            withProps<RootNavigationRef>('getRootNavigationRef')
+                .and(
+                    withDependencies([
+                        loose([
+                            relative.withDependencies([], 1),
+                            relative.withDependencies(
+                                loose([relative(1), relative(2)]),
+                                2,
+                            ),
+                        ]),
+                        ImportTrackerModuleId,
+                    ]),
+                )
+                .keyAs('tacet.discord.modules.mainTabsV2.RootNavigationRef'),
+        )
+
+        if (module) return (RootNavigationRef = module)
+    },
+    {
+        hint: {},
+    },
+)!

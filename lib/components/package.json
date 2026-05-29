@@ -1,0 +1,28 @@
+{
+  "name": "@tacet-mod/components",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": {
+      "default": "./src/index.ts"
+    },
+    "./FormSwitch": {
+      "default": "./src/FormSwitch.tsx"
+    },
+    "./Page": {
+      "default": "./src/Page.tsx"
+    },
+    "./SearchInput": {
+      "default": "./src/SearchInput.tsx"
+    },
+    "./TableRowAssetIcon": {
+      "default": "./src/TableRowAssetIcon.tsx"
+    },
+    "./types": {
+      "types": "./src/types.ts"
+    },
+    "./_": {
+      "default": "./src/_internal.ts"
+    }
+  }
+}

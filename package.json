@@ -1,0 +1,96 @@
+{
+  "name": "@tacet-mod/tacet",
+  "version": "0.0.1",
+  "description": "Tacet is a client modification for Discord. Built by Sakayori Studio.",
+  "author": "Sakayori (https://github.com/sakayorii)",
+  "contributors": [
+    "Sakayori Studio"
+  ],
+  "license": "GPL-3.0-or-later",
+  "homepage": "https://github.com/sakayorii/tacet-bundle-next#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sakayorii/tacet-bundle-next.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sakayorii/tacet-bundle-next/issues"
+  },
+  "keywords": [
+    "tacet",
+    "discord",
+    "client-modification",
+    "client-mod",
+    "discord-android",
+    "sakayori-studio"
+  ],
+  "module": "src/index.ts",
+  "devDependencies": {
+    "@biomejs/biome": "^2.4.4",
+    "@parcel/watcher": "^2.5.6",
+    "@react-native-clipboard/clipboard": "^1.16.3",
+    "@types/bun": "^1.3.9",
+    "react-native-safe-area-context": "^5.7.0",
+    "rolldown-plugin-dts": "^0.22.1"
+  },
+  "peerDependencies": {
+    "@react-navigation/core": "^7.14.0",
+    "@react-navigation/native": "^7.1.28",
+    "@react-navigation/stack": "^7.6.15",
+    "@shopify/flash-list": "1.7.2",
+    "@types/node": "^25.3.0",
+    "@types/react": "^19.2.14",
+    "buffer": "^6.0.3",
+    "react": "19.1.0",
+    "react-native": "0.81.4",
+    "typescript": "^5.9.3"
+  },
+  "private": true,
+  "scripts": {
+    "build": "bun --bun run scripts/build.ts",
+    "dev": "bun --bun run scripts/dev.ts",
+    "types": "bun --bun run scripts/types.ts"
+  },
+  "trustedDependencies": [
+    "@biomejs/biome",
+    "@parcel/watcher",
+    "@swc/core"
+  ],
+  "type": "module",
+  "workspaces": [
+    "lib/*",
+    "plugins/*"
+  ],
+  "dependencies": {
+    "@tacet-mod/assets": "workspace:*",
+    "@tacet-mod/components": "workspace:*",
+    "@revenge-mod/devtools-client": "^1.1.3",
+    "@revenge-mod/devtools-shared": "^1.0.2",
+    "@tacet-mod/discord": "workspace:*",
+    "@tacet-mod/externals": "workspace:*",
+    "@tacet-mod/modules": "workspace:*",
+    "@tacet-mod/patcher": "workspace:*",
+    "@tacet-mod/plugins": "workspace:*",
+    "@tacet-mod/react": "workspace:*",
+    "@tacet-mod/storage": "workspace:*",
+    "@tacet-mod/utils": "workspace:*",
+    "@swc/core": "^1.15.13",
+    "chalk": "^5.6.2",
+    "magic-string": "^0.30.21",
+    "react-native-click-outside": "^0.1.1",
+    "rolldown": "1.0.0-rc.5"
+  },
+  "overrides": {
+    "@react-native/community-cli-plugin": "npm:dry-uninstall",
+    "@react-native/codegen": "npm:dry-uninstall",
+    "babel-jest": "npm:dry-uninstall",
+    "babel-plugin-syntax-hermes-parser": "npm:dry-uninstall",
+    "jsc-android": "npm:dry-uninstall",
+    "react-devtools-core": "npm:dry-uninstall",
+    "recyclerlistview": "npm:dry-uninstall",
+    "react-native-gesture-handler": "npm:dry-uninstall",
+    "react-native-screens": "npm:dry-uninstall"
+  },
+  "patchedDependencies": {
+    "react-native-click-outside@0.1.1": "patches/react-native-click-outside@0.1.1.patch"
+  }
+}

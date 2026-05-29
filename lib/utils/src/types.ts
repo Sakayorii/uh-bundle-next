@@ -1,0 +1,44 @@
+export type Nullish = null | undefined
+export type If<T, Then, Else> = T extends true ? Then : Else
+export type Not<T extends boolean> = T extends true ? false : true
+export type AnyObject = Record<any, any>
+export type LogicalOr<T1, T2> = T1 extends true
+    ? true
+    : T2 extends true
+      ? true
+      : false
+export type LogicalAnd<T1, T2> = T1 extends true
+    ? T2 extends true
+        ? true
+        : false
+    : false
+export type DeepPartial<T> = {
+    [K in keyof T]?: T[K] extends AnyObject ? DeepPartial<T[K]> : T[K]
+}
+export type ExtractPredicate<T> = T extends (arg: any) => arg is infer R
+    ? R
+    : never
+
+export interface PreInitPluginApiUtils {
+    callback: typeof import('@tacet-mod/utils/callback')
+    error: typeof import('@tacet-mod/utils/error')
+    object: typeof import('@tacet-mod/utils/object')
+    promise: typeof import('@tacet-mod/utils/promise')
+    proxy: typeof import('@tacet-mod/utils/proxy')
+    tree: typeof import('@tacet-mod/utils/tree')
+    react: typeof import('@tacet-mod/utils/react')
+}
+
+export interface PluginApiUtils extends PreInitPluginApiUtils {
+    discord: typeof import('@tacet-mod/utils/discord')
+}
+
+declare module '@tacet-mod/plugins/types' {
+    export interface UnscopedPreInitPluginApi {
+        utils: PreInitPluginApiUtils
+    }
+
+    export interface UnscopedInitPluginApi {
+        utils: PluginApiUtils
+    }
+}

@@ -1,0 +1,14 @@
+import { FormSwitch as Switch } from '@tacet-mod/discord/design'
+import { View } from 'react-native'
+import { styles } from './_internal'
+import type { DiscordModules } from '@tacet-mod/discord/types'
+
+export default function FormSwitch(
+    props: DiscordModules.Components.FormSwitchProps,
+) {
+    return (
+        <View style={props.disabled && styles.disabled}>
+            <Switch {...props} />
+        </View>
+    )
+}
